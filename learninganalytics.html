@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Jessica Zhang</title>
+  </head>
+  <body>
+    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    <div class="nav">
+      <nav>
+        <ul class = "navigation">
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <header id="proj_page_header_um">
+      <h1 id = "proj_page_h1">University of Michigan Randall Lab</h1>
+      <h2 id="proj_page_h2">Learning Analytics Research</h2>
+      </header>
+      <div class="overview text-block">
+        <h3>I. Introduction</h3>
+        <br>
+        <p>During my first two years of college I worked at a research lab dedicated to learning analytics. I utilized programming tools like Python and R to analyze student data, recognizing trends and disparities that occurred and pinpointing what factors influenced these patterns.</p>
+      </div>
+      <div class="problem text-block">
+        <a name="problem"></a>
+        <h3>II. Problem Statement</h3>
+        <br>
+        <p>Every year, tons of students from a variety of different backgrounds enroll in universities to attain a higher education. In order to accommodate for these differing people, universities have implemented both honors classes as well as honor programs that students can take or be a part of to demonstrate their academic competency while challenging themselves. </p>
+        <br>
+        <p>At the University of Michigan, students are given the opportunity to gauge their own learning and either join the honors program, which encourages students to consistently take honors classes, or take the honors version of large, introductory courses. </p>
+      </div>
+      <div class="methodology text-block">
+        <h3>III. Methodology</h3>
+        <br>
+        <p>My aim was to determine whether there is a difference in student performance between student who took Physics 160 (Honors version of Physics 140) versus students who took Physics 140. To elaborate, here are the key differences between the two classes: </p>
+        <br>
+        <ul>
+          <li>Physics 140
+            <ul>
+              <li>More breadth</li>
+              <li>Greater emphasis on specific details</li>
+              <li>More rigid</li>
+              <li>No assumptions about students' knowledge</li>
+              <li>Greater variety of students</li>
+            </ul>
+          </li>
+          <li>Physics 160
+            <ul>
+              <li>More flexible</li>
+              <li>Assumes students' know a lot of the basic concepts</li>
+              <li>Tests understanding with problems that have many potential solution paths</li>
+              <li>Less variety of students</li>
+            <ul>
+          </li>
+        </ul>
+        <br>
+        <p> In order to learn more about each group of students, I utilized the Learning Analytics Data Architecture (LARC) and first filtered it to obtain all students who took either course. I then created two tables and seperated all the students based on which physics course they took. To get a general idea of the academic standing of each group of students prior to entering university, I performed multiple series of analysis (average, etc) on varying statistics, like ACT, SAT and AP scores. </p>
+        <br>
+        <p>To proceed, I then looked into how well each group of students performed in classes that most students from both groups took some time in their university career. I ordered the popularity/relativity of these courses by making a table of courses taken most often by Physics 140 students and another table of courses taken most often by Physics 160 students, and picked out the courses that appeared relatively high up in both tables.</p>
+        <br>
+        <p>Within these shared classes, I specifically chose to analyze physics student performance in Multivariable and Vector Calculus (Math 215) and Introduction to Differential Equations (Math 216). With these classes, I proceeded with further analysis by graphing a Math 215 grade distribution of all students who took Physics 140 and another Math 215 grade distribution of all students who took Physics 160. I did the same with Math 216. These graphs showed how the two differing groups performed holistically as a group, but the information was still very broad and no significant conclusions could be made.</p>
+        <br>
+        <p>In order to thoroughly compare the two groups of people, I further categorized each group of people based on the grade they received in each respective class into groups of those who got As, Bs, Cs, Ds, or Fs. I then paired the group of students who got a specific grade in Physics 140 with the group of students who got that same specific grade in Physics 160 and created a comparative grade distribution of what grades they received in a the shared classes. </p>
+      </div>
+      <div class="analysis text-block">
+        <a name="analysis"></a>
+        <h3>IV. Data Analysis</h3>
+        <br>
+        <p>Overall, analyzing the data left me with many different discoveries. Looking at each groups' statistics before they entered college, they were very obviously different, making it clear that the background of the students varied quite a bit. One clear example was ACT scores. Both groups of students produced very obviously left skewed graphs which I attributed to the fact that the University of Michigan as a whole is already a fraction of higher achieving individuals. But between the two groups, the graph of Physics 140 students was definitely more bell-shaped with an average of 30.05 while the graph of Physics 160 students was more left skewed with an average of 32.18.</p>
+        <br>
+        <div class = "analysis-images">
+          <div class = "act140">
+            <img src="images/140_act.png" alt="decorative"/>
+          </div>
+          <div class = "act160">
+            <img src="images/160_act.png" alt="decorative"/>
+          </div>
+        </div>
+      </div>
+      <div class="wireframe text-block">
+        <a name="wireframe"></a>
+        <h3>V. Conclusion</h3>
+        <br>
+        <p>We decided on a simple search engine. It takes in user input, either free form or data specific, and returns 5-10 results that are most similar to the input. The user can then manually choose a result and get more detailed information on his or her search.</p>
+        <br>
+        <!-- <div class = "wireframe-image">
+          <img src="images/wireframe.png" alt="decorative"/>
+        </div> -->
+      </div>
+
+      </div>
+  </body>
+</html>
