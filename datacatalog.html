@@ -6,6 +6,17 @@
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Jessica Zhang</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151421276-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151421276-1');
+    </script>
+
   </head>
   <body>
     <div class="skip"><a href="#main">Skip to Main Content</a></div>
@@ -14,10 +25,11 @@
         <ul class = "navigation">
           <li><a href="index.html">Projects</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="portfolio.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+    </div>
       <header id="proj_page_header_benz">
       <h1 id = "proj_page_h1">Mercedes-Benz Internship</h1>
       <h2 id="proj_page_h2">S.M.A.R.T data catalog application</h2>
@@ -58,8 +70,8 @@
           <li>EPM licensing</li>
           <li>Enterprise money > 1 million + 100k per license</li>
           <li>Heavy maintenance</li>
-        </div>
         </ul>
+        </div>
         <br>
         <div class="sharepoint">
         <h5 class="prop-type">SharePoint</h5>
@@ -84,13 +96,14 @@
         </div>
       </div>
       <div class="ideation text-block">
-        <a name="ideation"></a>
-        <h3>Ideation</h3>
-        <br>
-        <p>An effective, in house solution would be a data catalog application that a user can use to grab relevant information on specific subsets of data needed to identify trends and gain insight. We want it to be easy to use and efficient, querying through a huge volume of data quickly, but also accurate.</p>
-        <br>
+        <div class= "ideation-text">
+          <h3>Ideation</h3>
+          <br>
+          <p>An effective, in house solution would be a data catalog application that a user can use to grab relevant information on specific subsets of data needed to identify trends and gain insight. We want it to be easy to use and efficient, querying through a huge volume of data quickly, but also accurate.</p>
+          <br>
+        </div>
         <div class = "ideation-image">
-          <img src="images/datacatalog.png" alt="decorative"/>
+          <img src="images/datacatalog.png" id = "proj_pg_image" alt="decorative"/>
         </div>
       </div>
       <div class="wireframe text-block">
@@ -100,7 +113,7 @@
         <p>We decided on a simple search engine. It takes in user input, either free form or data specific, and returns 5-10 results that are most similar to the input. The user can then manually choose a result and get more detailed information on his or her search.</p>
         <br>
         <div class = "wireframe-image">
-          <img src="images/wireframe.png" alt="decorative"/>
+          <img src="images/wireframe.png" id = "proj_pg_image" alt="decorative"/>
         </div>
       </div>
       <div class="backend text-block">
@@ -110,7 +123,7 @@
         <p>The first step was to tackle the underlying dataset the search engine would be querying for the information it would display. We went in and manually created a new column in the dataset called "Revised_Column_Name" which was basically an unabbreviated version of "COLNAME". This would make the later process of matching the user input to the information in the dataset easier. Although tedious, it ensured the matching would be as accurate as possible.</p>
         <br>
         <div class = "backend-image">
-          <img src="images/backend.png" alt="decorative"/>
+          <img src="images/backend.png" id = "proj_pg_image" alt="decorative"/>
         </div>
       </div>
       <div class="code text-block" alt="decorative">
@@ -166,7 +179,6 @@
           <li>Logging total search history</li>
           <li>Continue expanding schemas</li>
         </ol>
-      </div>
       </div>
   </body>
 </html>

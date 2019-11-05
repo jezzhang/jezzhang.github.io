@@ -5,20 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dekko|Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Polaroid Photo Gallery</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151421276-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151421276-1');
+    </script>
+
   </head>
   <body class="bulletin">
     <div class="skip"><a href="#main">Skip to Main Content</a></div>
-    <div class="wrapper">
+    <div id = "portfolio_wrapper" class="wrapper">
     <div class="nav">
       <nav>
         <ul>
           <li><a href="index.html">Projects</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="portfolio.html" class = "active">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+    </div>
+    <!-- <p>Fun fact: I like to dance</p> -->
     <div class="gallery">
       <figure class = "gradient1">
         <img src="images/num1.jpg">
@@ -58,6 +73,14 @@
       </figure>
     </div>
   </div>
-  </div>
   </body>
+  <footer>
+    <div id="footer">
+      <div class="footer_container">
+        <a href="mailto:jezzhang@umich.edu" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/jessica-zhang-287b08150/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/jezzhang10" target="_blank"><i class="fab fa-facebook-square"></i></a>
+      </div>
+    </div>
+  </footer>
 </html>

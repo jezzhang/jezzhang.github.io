@@ -1,6 +1,7 @@
 /* overlapping style */
 html{
     scroll-behavior: smooth;
+
 }
 
 body{
@@ -18,6 +19,7 @@ body{
   background-color: #ffffff;
   padding: 20px 0;
   text-align: left;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 nav ul{
@@ -30,14 +32,21 @@ nav li{
 }
 
 nav a{
-  color: black;
-  font-weight: bold;
+  color: #474A51;
   text-decoration: none;
 }
 
 nav a:hover{
-  text-decoration: underline;
+  border-bottom: 1px solid #474A51;
 }
+
+nav a.active {
+  border-bottom: 2px solid #474A51;
+  background-color: transparent;
+  font-weight: bold;
+
+}
+
 
 .skip a{
   background: white;
@@ -54,12 +63,35 @@ nav a:hover{
   top:0px;
 }
 
+#footer {
+  padding: 60px 0 40px;
+  background-color: #474A51;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fas, .fab {
+    color: white !important;
+    margin: 0px 20px 10px 20px;
+    font-size: 30px;
+
+}
+
+.resume {
+  text-align: center;
+  color: white;
+
+}
+
 /* index page styling */
 
 #index_page_h1{
   font-size: 40px;
   line-height: 1;
   padding: 50px 50px 20px 50px;
+  font-family: 'Nunito Sans', sans-serif;
   text-align: left;
 
 }
@@ -69,11 +101,12 @@ nav a:hover{
   line-height: 1;
   padding: 0px 50px 8px 50px;
   text-align: left;
-  animation: type 3s steps(47);
+  animation: type 3s steps(41);
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid black;
-  width: 47ch;
+  width: 41ch;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 @keyframes type {
@@ -81,13 +114,13 @@ nav a:hover{
     width:0ch;
   }
   100% {
-    width:47ch;
+    width:41ch;
 
   }
 
 }
 
-.wrapper{
+#index_wrapper{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 30px auto auto auto auto auto;
@@ -118,13 +151,18 @@ nav a:hover{
   text-align: center;
 }
 
+.project_link {
+  text-decoration: none;
+  color: #474A51;
+}
+
 
 .projects{
   grid-column: 1 / -1;
-  grid-row: 2 / span 1;
+  grid-row: 3 / span 1;
   display: grid;
-  width: 100vw;
-  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   padding-bottom: 80px;
 }
 
@@ -204,6 +242,8 @@ nav a:hover{
   top:170px;
   text-align: center;
   visibility:hidden;
+  font-family: 'Dekko', sans-serif;
+  font-size: 20px;
 }
 
 .folder1:hover .text{
@@ -232,6 +272,8 @@ nav a:hover{
   top:170px;
   text-align: center;
   visibility:hidden;
+  font-family: 'Dekko', sans-serif;
+  font-size: 20px;
 }
 
 .folder2:hover .text{
@@ -260,6 +302,8 @@ nav a:hover{
   top:170px;
   text-align: center;
   visibility:hidden;
+  font-family: 'Dekko', sans-serif;
+  font-size: 20px;
 }
 
 .folder3:hover .text{
@@ -289,6 +333,8 @@ nav a:hover{
   top:170px;
   text-align: center;
   visibility:hidden;
+  font-family: 'Dekko', sans-serif;
+  font-size: 20px;
 }
 
 .folder4:hover .text{
@@ -301,23 +347,32 @@ nav a:hover{
 
 /* about page styling */
 
+#me {
+  object-fit: contain;
+  height: 90%;
+  width: 90%;
+  margin-bottom: 30px;
+
+
+}
+
 .about{
   grid-column: 1 / -1;
   grid-row: 1 / span 1;
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   padding-top: 100px;
   padding-bottom: 80px;
 }
 
+
 .about-image{
   display: block;
   grid-column: 1 / span 1;
-  grid-row: 1 / -1;
-  margin: 20px;
-  max-height: 600px;
+  grid-row: 1 / span 1;
+  margin-left: 40px;
   overflow: hidden;
   /* image is weird, cannot get it to resize correctly and fit where i want */
 
@@ -327,9 +382,9 @@ nav a:hover{
   position: relative;
   overflow: hidden;
 
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 1;
-  height: 500px;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  height: 380px;
   background-color: #eed3db;
 }
 
@@ -349,18 +404,36 @@ nav a:hover{
   display: block; width: 0;
 }
 
-.summary {
-  margin: 100px;
+.summary-header {
+  margin: 60px 50px 0px 50px;
   text-align: left;
+  font-family: 'Dekko', cursive;
+  font-size: 28px;
+  text-decoration: underline;
+  color: #474A51;
+
 }
+
+.summary {
+  margin: 20px 50px 20px 50px;
+  text-align: left;
+  font-family: 'Dekko', cursive;
+  font-size: 20px;
+  color: #474A51;
+}
+
 
 .note-2 {
   position: relative;
   overflow: hidden;
 
-  grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
   background-color: #e1d6eb;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
 }
 
 .note-2:before {
@@ -378,17 +451,72 @@ nav a:hover{
   display: block; width: 0;
 }
 
-.skills {
-  padding-left: 100px;
-  padding-top: 70px;
+.skills-header {
+  margin: 60px 50px 0px 50px;
   text-align: left;
+  font-family: 'Dekko', cursive;
+  font-size: 28px;
+  color: #474A51;
+  text-decoration: underline;
+
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+
 }
+
+.languages {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+
+}
+
+.tools {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+
+.programming {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.lang-header, .tools-header, .program-header {
+  margin: 20px 50px 0px 50px;
+  text-align: left;
+  font-family: 'Dekko', cursive;
+  font-size: 23px;
+  color: #474A51;
+}
+
+.lang-list, .tools-list, .program-list {
+  margin: 10px 50px 10px 50px;
+  text-align: left;
+  font-family: 'Dekko', cursive;
+  font-size: 20px;
+  color: #474A51;
+}
+
+
 
 .callout-2 {
-  margin: 50px;
+  margin: 30px;
 }
 
-/* portfolio page styling  */
+.callout-3 {
+  margin: 0px 30px 30px 30px;
+
+}
+
+
+/* contact page styling */
+form {
+  margin: 50px;
+
+}
+
+
+/* portfolio page styling */
 
 /* .bulletin {
   background-color: #E7E7E7;
@@ -397,11 +525,11 @@ nav a:hover{
 
 .gallery{
   display: flex;
-  width: 1400px;
-  padding-top: 50px;
-  margin: auto;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+  flex-flow: wrap;
+  flex-direction: row;
 }
 
 figure{
@@ -417,9 +545,14 @@ figure img{
   width: 400px;
   height: 400px;
 }
+
 figure figcaption{
   text-align: center;
   padding: 8px 4px;
+  font-family: "Dekko";
+  font-size: 25px;
+  padding-top: 30px;
+  color: #474A51;
 }
 
 .gradient1 {
@@ -435,6 +568,71 @@ figure figcaption{
 .gradient3 {
   background-color: #dbdbdb;
 }
+
+/* contact page styling */
+
+/* .center
+{
+    position: absolute;
+    top: 65%;
+    left: 81%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+.pencil
+{
+    width: 400px;
+    height: 15px;
+    background:#fff29e;
+    border-top: 10px solid #fff29e;
+    border-bottom: 10px solid #fff29e;
+}
+
+.pencil:before
+{
+    content: '';
+    position: absolute;
+    left: -80px;
+    top: 0;
+    border-style: solid;
+    border-color: transparent #eab48f transparent transparent;
+    border-width: 17px 40px 18px;
+}
+.pencil:after
+{
+    content: '';
+    position: absolute;
+    left: -80px;
+    top: 0;
+    border-style: solid;
+    border-color: transparent #474A51 transparent transparent;
+    border-width: 17px 40px 18px;
+    transform: scale(.3);
+}
+.top
+{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 15px;
+    width: 30px;
+    background: #dedede;
+    border-top: 10px solid #dedede;
+    border-bottom: 10px solid #dedede;
+}
+.top:before
+{
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -100%;
+    width: 150%;
+    height: 100%;
+    background: #da8e8d;
+    border-top: 10px solid #da8e8d;
+    border-bottom: 10px solid #da8e8d;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+} */
 
 /* individual project pages  */
 
@@ -497,10 +695,15 @@ text-align: left;
 
 
 
-.wireframe-image{
+.wireframe-image ,.ideation-image,.backend-image{
   display: block;
-  max-width: 200px;
+  width: 100%;
 
+}
+
+
+#proj_pg_image {
+  width: 100%;
 }
 
 
@@ -529,25 +732,37 @@ text-align: left;
 
   .projects{
     grid-row: 3 / span 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
   }
 
   .folder2 {
-      grid-column: 2 / span 1;
-      grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
 
   }
 
   .folder3 {
-      grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
   }
 
 
   .folder4 {
-      grid-column: 2 / span 1;
-      grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
   }
 
+
 /* about page styling */
+
+  #me {
+    width: 95%;
+    height: 100%;
+    margin: 0;
+  }
 
   .about{
     grid-column: 1 / -1;
@@ -555,29 +770,24 @@ text-align: left;
     display: grid;
 
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr;
-    padding-top: 100px;
-    padding-bottom: 80px;
+    grid-template-rows: 1fr 1fr;
+
   }
+
 
   .about-image{
     display: block;
     grid-column: 1 / span 1;
     grid-row: 1 / -1;
-    margin: 20px;
-    max-height: 600px;
-    overflow: hidden;
-    /* image is weird, cannot get it to resize correctly and fit where i want */
+    width: 100%;
 
   }
 
   .note-1 {
-    position: relative;
     overflow: hidden;
 
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
-    height: 500px;
     background-color: #eed3db;
   }
 
@@ -599,11 +809,14 @@ text-align: left;
 
   .note-2 {
     position: relative;
-    overflow: hidden;
+    dislay: grid;
+
 
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
     background-color: #e1d6eb;
+
+
   }
 
   .note-2:before {
@@ -621,9 +834,15 @@ text-align: left;
     display: block; width: 0;
   }
 
+
   .callout-2 {
-    margin: 50px;
+    margin: 0px 50px 0px 50px;
   }
+
+  .callout-3 {
+    margin: 50px 50px 0px 50px;
+  }
+
 
 /* portfolio page styling */
 
@@ -631,10 +850,6 @@ text-align: left;
     padding-top: 80px;
     grid-column: 1 / -1;
     grid-row: 2 / -1;
-    display: grid;
-
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
 
 
   }
@@ -657,7 +872,6 @@ text-align: left;
 
   .proposition {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
   }
@@ -685,6 +899,22 @@ text-align: left;
     grid-column: 3 / span 1;
     grid-row: 2 / span 1;
   }
+
+  .ideation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+  }
+
+  .ideation-text {
+    grid-column: 1 / span 1;
+  }
+
+  .ideation-image {
+    grid-column: 2 / span 1;
+  }
+
 
   .analysis-images {
     display: grid;

@@ -5,32 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dekko|Nunito+Sans|Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Jessica Zhang</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151421276-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151421276-1');
+    </script>
+
   </head>
   <body>
     <div class="skip"><a href="#main">Skip to Main Content</a></div>
-    <div class="wrapper">
+    <div id = "about_wrapper" class="wrapper">
     <div class="nav">
       <nav>
         <ul>
           <li><a href="index.html">Projects</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html" class = "active">About</a></li>
+          <li><a href="portfolio.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+    </div>
     <div class="about">
       <div class="about-image">
-        <img src="images/mee.jpg"/>
+        <img src="images/mee.jpg"/ id = "me">
       </div>
       <div class="note-1 callout-2">
+        <p class="summary-header">ABOUT ME</p>
         <p class="summary">Student at the University of Michigan pursuing a dual degree in statistics and information. Hoping to combine insights in both areas to make meaningful conclusions from the powerful information data provides us.</p>
+        <p class="summary">Outside of academia, I enjoy both traditional and modern dancing, creative drawing as well as volunteering.</p>
       </div>
-      <div class="note-2 callout-2">
-        <p class="skills">Extracurriculars</p>
-      </div>
-    </div>
+      <div class="note-2 callout-3">
+        <p class="skills-header">SKILLS</p>
+        <div class="languages">
+          <p class="lang-header">Languages:</p>
+          <ul class="lang-list">
+            <li>English</li>
+            <li>Chinese</li>
+          </ul>
+        </div>
+        <div class="tools">
+          <p class="tools-header">Tools:</p>
+          <ul class="tools-list">
+            <li>Microsoft Office</li>
+            <li>G Suite</li>
+            <li>Adobe Photoshop</li>
+            <li>Figma</li>
+          </ul>
+        </div>
+        <div class="programming">
+          <p class="program-header">Programming:</p>
+          <ul class="program-list">
+            <li>Python</li>
+            <li>R</li>
+            <li>C++</li>
+            <li>SQL</li>
+            <li>HTML/CSS</li>
+          </ul>
+        </div>
     </div>
   </div>
   </body>
+  <footer>
+    <div id="footer">
+      <div class="footer_container">
+        <a href="mailto:jezzhang@umich.edu" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/jessica-zhang-287b08150/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/jezzhang10" target="_blank"><i class="fab fa-facebook-square"></i></a>
+      </div>
+    </div>
+  </footer>
 </html>

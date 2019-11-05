@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Jessica Zhang</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151421276-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151421276-1');
+    </script>
+
+  </head>
+  <body>
+    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    <div class="nav">
+      <nav>
+        <ul class = "navigation">
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+      <header id="proj_page_header_benz">
+      <h1 id = "proj_page_h1">Mercedes-Benz Internship</h1>
+      <h2 id="proj_page_h2">Data optimization and consolidation</h2>
+      </header>
+      <div class="overview text-block">
+        <h3>Introduction</h3>
+        <br>
+        <p>Over the years, MBFS has accumulated tons of cubes, reports, and dashboards within its Management Reporting environment.(ADD MORE)</p>
+      </div>
+      <div class="goal text-block">
+        <h3>Goals</h3>
+        <br>
+        <ul>
+          <li>Conduct impactful analysis to make insightful recommendation on overall consolidation and optimization of data</li>
+          <li>Write code that can be used to run monthly inspections on data</li>
+        </ul>
+      </div>
+      <div class="impactanalysis text-block">
+        <h3>Analysis</h3>
+        <br>
+        <p>I wanted to get a quick, overview of the data in the environment so I first looked at what kind of reports were being used by employees the most. </p>
+
+        <p>I then dived deeper into the analysis and looked into multiple factors involved such as the elements and metrics, usage, run time, and source.</p>
+        <p>Specifically, I was interested in the execution time of reports based on whether they successfully ran or not. To do this, I divided the Report Usage
+        table based on the "Status" column which consisted of two values, Success and Failure, and conducted statistical analysis for each subgroup. Initially, the
+        statistics I was getting didn't seem quite accurate but with a bit of filtering, I found that a small portion of each subset of the execution times (7-8%)
+        exceeded 5 minutes and was heavily skewing my data. I decided it was best to eliminate those values.</p>
+        <br>
+        <div class = "status-images">
+          <div class = "success">
+            <img src="images/success.png" alt="decorative"/>
+          </div>
+          <div class = "failure">
+            <img src="images/failure.png" alt="decorative"/>
+          </div>
+        </div>
+        <p>Surface level analysis showed that both distributions were still heavily skewed right. For the failed report executions distribution, there were two obvious
+        spikes at two distinct places, one between 0-0.5 minutes and one between 1.5 and 2.5 minutes.
+        <br>
+        <p> Upon further investigation, at the:</p>
+        <ul>
+          <li>Less than 0.5 minutes spike -  Only 9% of the failures were due to user cancellation</li>
+          <li>Between 1.5 and 2.5 minutes spike – 81% of the failures were due to user cancellation</li>
+        </ul>
+
+        <p>This means that most reports, if failed, fail quite early on while failures later on are usually the result of users manually cancelling the running of the report.</p>
+
+      </div>
+      <div class="next text-block">
+        <a name="next"></a>
+        <h3>Next Steps</h3>
+        <br>
+        <ol>
+          <li>User Testing</li>
+          <li>Rolling out to Data Department</li>
+          <li>Including more features in product</li>
+          <li>Logging total search history</li>
+          <li>Continue expanding schemas</li>
+        </ol>
+      </div>
+  </body>
+</html>
