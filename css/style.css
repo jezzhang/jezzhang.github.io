@@ -16,7 +16,7 @@ body{
   grid-column: 1 / -1;
   grid-row: 1 / span 1;
 
-  font-size: 15px;
+  font-size: 12px;
   background-color: #ffffff;
   padding: 20px 0;
   margin-left: 20px;
@@ -699,12 +699,13 @@ iframe {
     line-height: 1;
     padding: 0px 50px 8px 50px;
     text-align: left;
-    animation: type 3s steps(41);
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid black;
     width: 41ch;
+    animation: type 3s steps(41), blink .5s step-end 3s infinite alternate;
   }
+
 
   @keyframes type {
     0% {
@@ -716,6 +717,15 @@ iframe {
     }
 
   }
+
+  @keyframes blink {
+
+   50% { border-color: transparent;
+
+   }
+}
+
+
 
   .projects{
     grid-row: 3 / span 1;
