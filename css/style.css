@@ -83,6 +83,10 @@ nav a.active {
 
 }
 
+.skip {
+  font-family: 'Nunito Sans', sans-serif;  
+}
+
 
 /* index page styling */
 
@@ -433,7 +437,7 @@ nav a.active {
 
 /* portfolio page styling */
 
-h6 {
+#about_page_h1, #portfolio_page_h1, #contact_page_h1 {
   font-family: "Nunito Sans";
   font-size: 25px;
   margin-left: 50px;
@@ -588,7 +592,7 @@ iframe {
   ##Screen = B/w 768px to 1024px
 */
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 600px) and (max-width: 1000px) {
 
 /* overlap styling */
 
@@ -606,7 +610,14 @@ iframe {
 
   .folder1, .folder2, .folder3, .folder4{
     width: 90vw;
-    height: 57vh;
+    height: 60vh;
+
+  }
+
+  .folder1 .text, .folder2 .text, .folder3 .text, .folder4 .text {
+
+    font-size: 30px;
+
 
   }
 
@@ -668,17 +679,14 @@ iframe {
 
   }
 
-/* portfolio page styling */
 
 }
 
 /*
   ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
 */
 
-
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 1000px){
 
 /* overlap styling */
 
@@ -779,6 +787,7 @@ iframe {
 
   .folder1 .text, .folder2 .text, .folder3 .text, .folder4 .text{
     visibility:hidden;
+    color: black;
 
   }
 
