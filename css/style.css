@@ -84,7 +84,15 @@ nav a.active {
 }
 
 .skip {
-  font-family: 'Nunito Sans', sans-serif;  
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+#about_page_h1, #portfolio_page_h1, #contact_page_h1, #resume_page_h1 {
+  font-family: "Nunito Sans";
+  font-size: 25px;
+  margin-left: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 
@@ -437,13 +445,6 @@ nav a.active {
 
 /* portfolio page styling */
 
-#about_page_h1, #portfolio_page_h1, #contact_page_h1 {
-  font-family: "Nunito Sans";
-  font-size: 25px;
-  margin-left: 50px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
 
 .gallery{
   display: flex;
@@ -489,6 +490,22 @@ figure figcaption{
 
 .gradient3 {
   background-color: #dbdbdb;
+}
+
+@-webkit-keyframes flash {
+ 0% { opacity: .2; }
+ 100% { opacity: 1; }
+}
+@keyframes flash {
+ 0% { opacity: .2; }
+ 100% { opacity: 1; }
+}
+
+.flash:hover {
+  color: #ffffff;
+  opacity: 1;
+  -webkit-animation: flash 2s;
+  animation: flash 2s;
 }
 
 
@@ -585,6 +602,27 @@ iframe {
   display: block;
   width: 60%;
 }
+
+#resume_page_h1 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Helvetica;
+  text-shadow:
+    0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+}
+
 
 
 /*
