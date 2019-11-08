@@ -89,7 +89,7 @@ nav a.active {
 
 #about_page_h1, #portfolio_page_h1, #contact_page_h1, #resume_page_h1 {
   font-family: "Nunito Sans";
-  font-size: 25px;
+  font-size: 24px;
   margin-left: 50px;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -600,20 +600,21 @@ iframe {
   margin: auto;
   padding: 10px;
   display: block;
-  width: 60%;
+  width: 700px;
+  height: 900px;
 }
 
 #resume_page_h1 {
-  color: #fff;
+  color: white;
   font-size: 25px;
   font-weight: bold;
-  font-family: Helvetica;
+  font-family: "Nunito Sans";
   text-shadow:
-    0 1px 0 #ccc,
-    0 2px 0 #c9c9c9,
-    0 3px 0 #bbb,
-    0 4px 0 #b9b9b9,
-    0 5px 0 #aaa,
+    0 1px 0 #b6b3cb,
+    0 2px 0 #aba7c3,
+    0 3px 0 #9995b7,
+    0 4px 0 #8580a8,
+    0 5px 0 #76709e,
     0 6px 1px rgba(0,0,0,.1),
     0 0 5px rgba(0,0,0,.1),
     0 1px 3px rgba(0,0,0,.3),
@@ -622,6 +623,8 @@ iframe {
     0 10px 10px rgba(0,0,0,.2),
     0 20px 20px rgba(0,0,0,.15);
 }
+
+
 
 
 
@@ -732,6 +735,11 @@ iframe {
     text-align: right;
     font-size: 20px;
   }
+
+  #about_page_h1, #portfolio_page_h1, #contact_page_h1, #resume_page_h1 {
+    font-size: 32px;
+  }
+
 
 /* index page styling */
   #index_page_h1{
@@ -1049,4 +1057,36 @@ iframe {
   }
 
 
+}
+
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto;
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: none;
+    transition: none;
+    z-index: 1;
+  }
+
+  .skip a:focus{
+    top:0px;
+  }
+
+  #index_page_h2{
+    animation: none;
+    border-right: none;
+  }
+
+
+  .flash:hover {
+    animation: none;
+  }
 }
