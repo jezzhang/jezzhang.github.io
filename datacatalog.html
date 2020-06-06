@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Dekko&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Jessica Zhang</title>
 
@@ -34,35 +35,37 @@
         </ul>
       </nav>
     </div>
-      <header id="proj_page_header_benz">
-      <h1 id = "proj_page_h1">Mercedes-Benz Internship</h1>
-      <h2 id="proj_page_h2">S.M.A.R.T data catalog application</h2>
-      </header>
+      <div class="proj_page_header_datacatalog">
+        <div class= "white_box">
+          <h1 class = "blue" id = "proj_page_h1">Mercedes-Benz Internship</h1>
+          <h2 id="proj_page_h2">S.M.A.R.T data catalog application</h2>
+        </div>
+      </div>
       <div class="overview text-block">
-        <h3>Introduction</h3>
+        <h3 class = "blue">Introduction</h3>
         <br>
-        <p>This past summer I worked as a data insights intern at Mercedes-Benz Financial Services tackling a problem that any company with data struggles with: data governance.</p>
+        <p class = individual_p>This past summer I worked as a data insights intern at Mercedes-Benz Financial Services tackling a problem that any company with data struggles with: data governance.</p>
       </div>
       <div class="problem text-block">
         <a name="problem"></a>
-        <h3>Problem Statement</h3>
+        <h3 class = "blue">Problem Statement</h3>
         <br>
         <h4>How can MBFS more easily understand its data?</h4>
         <br>
-        <p>With so many employees dependent on such an extensive database, it is hard to guarantee data integrity and disseminate knowledge of the underlying sourcing. Thus, both efficiency and accuracy are both compromised.</p>
+        <p class = individual_p>With so many employees dependent on such an extensive database, it is hard to guarantee data integrity and disseminate knowledge of the underlying sourcing. Thus, both efficiency and accuracy are both compromised.</p>
         <br>
         <h5> Current Issues:</h5>
         <br>
         <ul>
-          <li>Heavy dependency on "data masters" for explanations and sourcing</li>
-          <li>Not having an agreed upon definition of data between business users and the data department</li>
-          <li>Redundancy and duplication of columns across tables</li>
-          <li>Time searching for reliable information without easy self-service tool</li>
+          <li class = individual_li>Heavy dependency on "data masters" for explanations and sourcing</li>
+          <li class = individual_li>Not having an agreed upon definition of data between business users and the data department</li>
+          <li class = individual_li>Redundancy and duplication of columns across tables</li>
+          <li class = individual_li>Time searching for reliable information without easy self-service tool</li>
         </ul>
       </div>
       <div class="proposition text-block">
         <div class="prop-top">
-        <h3>Value Proposition</h3>
+        <h3 class = "blue">Value Proposition</h3>
         <br>
         <h4>What would a self service tool to solve these problems look like?</h4>
         <br>
@@ -71,9 +74,9 @@
         <h5 class="prop-type">Enterprise Data Catalog</h5>
         <br>
         <ul>
-          <li>EPM licensing</li>
-          <li>Enterprise money > 1 million + 100k per license</li>
-          <li>Heavy maintenance</li>
+          <li class = individual_column>EPM licensing</li>
+          <li class = individual_column>Enterprise money > 1 million + 100k per license</li>
+          <li class = individual_column>Heavy maintenance</li>
         </ul>
         </div>
         <br>
@@ -81,9 +84,9 @@
         <h5 class="prop-type">SharePoint</h5>
         <br>
         <ul>
-          <li>Difficult to search</li>
-          <li>Not easily scalable</li>
-          <li>Cumbersome to update</li>
+          <li class = individual_column>Difficult to search</li>
+          <li class = individual_column>Not easily scalable</li>
+          <li class = individual_column>Cumbersome to update</li>
         </ul>
         </div>
         <br>
@@ -91,19 +94,19 @@
         <h5 class="prop-type">Building it in-house</h5>
         <br>
         <ul>
-          <li>Inexpensive</li>
-          <li>Easy to search</li>
-          <li>Ownership of product</li>
-          <li>Capable of adding features/functionality</li>
-          <li>No licensing issues/cross team usage</li>
+          <li class = individual_column>Inexpensive</li>
+          <li class = individual_column>Easy to search</li>
+          <li class = individual_column>Ownership of product</li>
+          <li class = individual_column>Capable of adding features/functionality</li>
+          <li class = individual_column>No licensing issues/cross team usage</li>
         </ul>
         </div>
       </div>
       <div class="ideation text-block">
         <div class= "ideation-text">
-          <h3>Ideation</h3>
+          <h3 class = "blue">Ideation</h3>
           <br>
-          <p>An effective, in house solution would be a data catalog application that a user can use to grab relevant information on specific subsets of data needed to identify trends and gain insight. We want it to be easy to use and efficient, querying through a huge volume of data quickly, but also accurate.</p>
+          <p class = individual_p>An effective, in house solution would be a data catalog application that a user can use to grab relevant information on specific subsets of data needed to identify trends and gain insight. We want it to be easy to use and efficient, querying through a huge volume of data quickly, but also accurate.</p>
           <br>
         </div>
         <div class = "ideation-image">
@@ -112,9 +115,9 @@
       </div>
       <div class="wireframe text-block">
         <a name="wireframe"></a>
-        <h3>Wireframing</h3>
+        <h3 class = "blue">Wireframing</h3>
         <br>
-        <p>We decided on a simple search engine. It takes in user input, either free form or data specific, and returns 5-10 results that are most similar to the input. The user can then manually choose a result and get more detailed information on his or her search.</p>
+        <p class = individual_p>We decided on a simple search engine. It takes in user input, either free form or data specific, and returns 5-10 results that are most similar to the input. The user can then manually choose a result and get more detailed information on his or her search.</p>
         <br>
         <div class = "wireframe-image">
           <img src="images/wireframe.png" id = "proj_pg_image" alt="decorative"/>
@@ -122,9 +125,9 @@
       </div>
       <div class="backend text-block">
         <a name="backend"></a>
-        <h3>Backend Analysis</h3>
+        <h3 class = "blue">Backend Analysis</h3>
         <br>
-        <p>The first step was to tackle the underlying dataset the search engine would be querying for the information it would display. We went in and manually created a new column in the dataset called "Revised_Column_Name" which was basically an unabbreviated version of "COLNAME". This would make the later process of matching the user input to the information in the dataset easier. Although tedious, it ensured the matching would be as accurate as possible.</p>
+        <p class = individual_p>The first step was to tackle the underlying dataset the search engine would be querying for the information it would display. We went in and manually created a new column in the dataset called "Revised_Column_Name" which was basically an unabbreviated version of "COLNAME". This would make the later process of matching the user input to the information in the dataset easier. Although tedious, it ensured the matching would be as accurate as possible.</p>
         <br>
         <div class = "backend-image">
           <img src="images/backend.png" id = "proj_pg_image" alt="decorative"/>
@@ -132,12 +135,12 @@
       </div>
       <div class="code text-block" alt="decorative">
         <a name="code"></a>
-        <h3>How it Works</h3>
+        <h3 class = "blue">How it Works</h3>
         <br>
-        <p>The application depends on two main functions, one that gets the main idea of the user's search and another that scores how similar the main idea is to each entry in the dataset. </p>
+        <p class = individual_p>The application depends on two main functions, one that gets the main idea of the user's search and another that scores how similar the main idea is to each entry in the dataset. </p>
         <br>
         <ol>
-          <li>First, the search engine will take in free form text or exact column names. This is where the first function comes into play:
+          <li class = individual_li>First, the search engine will take in free form text or exact column names. This is where the first function comes into play:
             <ul>
               <li>Main Idea Function
                 <ul>
@@ -150,7 +153,7 @@
               </li>
             </ul>
           </li>
-          <li>Next, the application will query Vertica, where the company dataset resides, to pull out the columns of the dataset the user is most likely looking for. This is where the second function comes into play:
+          <li class = individual_li>Next, the application will query Vertica, where the company dataset resides, to pull out the columns of the dataset the user is most likely looking for. This is where the second function comes into play:
             <ul>
               <li>Scoring System Function
                 <ul>
@@ -169,19 +172,19 @@
               </li>
             </ul>
           </li>
-          <li>Lastly, the user will be allowed to manually choose which column they want more information on and the application will display that</li>
+          <li class = individual_li>Lastly, the user will be allowed to manually choose which column they want more information on and the application will display that</li>
         </ol>
       </div>
       <div class="next text-block">
         <a name="next"></a>
-        <h3>Next Steps</h3>
+        <h3 class = "blue">Next Steps</h3>
         <br>
         <ol>
-          <li>User Testing</li>
-          <li>Rolling out to Data Department</li>
-          <li>Including more features in product</li>
-          <li>Logging total search history</li>
-          <li>Continue expanding schemas</li>
+          <li class = individual_li>User Testing</li>
+          <li class = individual_li>Rolling out to Data Department</li>
+          <li class = individual_li>Including more features in product</li>
+          <li class = individual_li>Logging total search history</li>
+          <li class = individual_li>Continue expanding schemas</li>
         </ol>
       </div>
   </body>

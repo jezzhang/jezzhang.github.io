@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dekko&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <title>Jessica Zhang</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151421276-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151421276-1');
+    </script>
+
+  </head>
+  <body>
+    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    <div class="nav">
+      <nav>
+        <ul class = "navigation">
+          <li><a href="index.html" class = "active">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+      <div class="proj_page_header_datareport">
+        <div class="white_box">
+          <h1 class = "magenta" id = "proj_page_h1">University of Michigan SI 330</h1>
+          <h2 id="proj_page_h2">Looking at the Coronavirus Epidemic from Two Points of View: The Hard Facts vs. Human Awareness </h2>
+        </div>
+      </div>
+      <div class="motivation text-block">
+        <h3 class = "magenta">Motivation</h3>
+        <br>
+        <p class = individual_p>With the COVID-19 epidemic currently happening worldwide, many peoples’ lives have been dramatically affected. However, due to the contagious nature of the disease, a big reason for its exponential spread is human ignorance and lack of information surrounding the virus. For example, when the outbreak took over Italy, many Italians were cautioning Americans to stay inside and take the warnings seriously, because if we didn’t, we would soon see a spike in our cases like they had. Unfortunately, we did not listen and weeks later, the United States became the country with the most coronavirus cases.</p>
+        <br>
+        <p class = individual_p>I want to look at this epidemic from two points of view: the hard facts and human awareness. Since outbreaks of the virus happened at significantly different times in each region, I want to see how that affects the overall distribution of human curiosity in each region while keeping an eye on their unique number of confirmed cases, recoveries, and deaths. I am hoping to identify trends and see if there is a relationship between awareness and physical cases.</p>
+      </div>
+      <div class="problem text-block">
+        <a name="problem"></a>
+        <h3 class = "magenta">Data Sources</h3>
+        <br>
+        <p class = individual_p>The two data sources I used were Google Trends API and World Health Organization Coronavirus Source data.</p>
+        <br>
+        <h5>Google Trends API</h5>
+        <br>
+        <ul>
+          <li class = individual_li>This data source obtains its data from Google Trends, a website that analyzes and lists the most popular Google search results based on various regions and languages. I accessed it by first installing pytrends and then connecting to Google using the method TrendReq. </li>
+          <li class = individual_li>Each time you make a request, you build a payload and specify a list of keywords, country, timeframe, etc, to narrow down your search. You can then perform a variety of different API methods on the payload that all return dataframes. </li>
+          <li class = individual_li>The variables that I found most important and ended up using were “geoName”, “date” and the search volume index. Unlike what I initially thought, Google Trends API does not return the actual search volume numbers, but rather an index ranging from 0-100. The numbers represent the search interest relative to the highest point on the chart for the specific circumstances of the current payload.</li>
+          <li class = individual_li>I sent multiple requests to this API and got a couple dataframes from it to  analyze. One that I obtained regarding current interest in Coronavirus by region had 250 records (one per region), while the others that I obtained regarding interest over a period of time (per country) were each ~90 records long.</li>
+          <li class = individual_li>For the data on overall interest by region, it automatically grabs data for the current day. For the data on interest per country, I set it to be a 3 month time period and grabs data from the current day to 3 months ago. </li>
+        </ul>
+
+        <br>
+        <h5>Our World in Data Coronavirus Source data (csv)</h5>
+        <br>
+        <ul>
+          <li class = individual_li>This data source is provided by Our World in Data and is updated daily, including data on confirmed cases, deaths, and testing. It can be accessed through download from the website. </li>
+          <li class = individual_li>The format that is returned is either a csv or xlsx file that you can easily read into Python.</li>
+          <li class = individual_li>The variables that I found most important were “location”, “date”,  “total_cases”, “new_cases”, “total_deaths” and “new_deaths”. In order to successfully merge this data source with the Google Trends API one “location” and “date” were necessary. For data analysis, I used “total_cases” as well as “new_deaths” to understand what would possibly trigger a pattern in searches. </li>
+          <li class = individual_li>The csv itself had 12247 records however I never used all of them at once. The first time I used it, I filtered to only include the records of the current day, getting 205 records. The other times I filtered for specific locations, getting 112 records for each location. </li>
+          <li class = individual_li>The csv as a whole covered the time period from 12/31/19 to the current day. </li>
+        </ul>
+      </div>
+
+      <div class="dataprocessing text-block">
+        <h3 class = "magenta">Data Processing</h3>
+        <br>
+        <p class = individual_p>Since the scope of focus for this project was quite large (encompassing the whole world), my goal was to first create choropleth graphs for each of my datasets individually so I could get a visual representation of all the data at once. Then, I would use those graphs to identify what I wanted to look for once I combined the datasets together. Despite the fact that I was only displaying information for one dataset at a time, I actually still had to merge each dataset with a shapefile, which contained the geometry polygons of the countries.</p>
+        <br>
+        <p class = individual_p>When merging, I noticed the number of NaNs I got was abnormally large, considering that I was merely joining on “country name” which shouldn’t have too much variance. After some exploration, I discovered that the cause of this was different spelling of country names. For example, in the Google Trends API, the US was referred to as “United States” but in the shapefile, the US was referred to as “United States of America”. Therefore, in order to make sure I was not accidentally leaving out information, I did a lot of manual replacing of country names.</p>
+        <br>
+        <p class = individual_p>Once I got a look at the datasets individually, I was ready to start processing the datasets together. I wanted to look at the distribution of searches alongside the distribution of total cases over a fixed period of time, but because there were too many countries and too much data, I decided to hone in on 4 major countries: the United States, Italy, China, and Korea. I chose these not only based on what I saw from the two choropleth graphs, but also based on what I had been hearing on the news. I chose the United States and Italy because they were the two countries which encountered extreme exponential growth in cases. I chose China because that was the initial location of the virus outbreak. Lastly, I chose Korea, because it seemed like a good control. Although they had experienced their fair share of cases, they were very quick to respond to the outbreak and keep it under control.</p>
+        <br>
+        <p class = individual_p>For each country, I made a separate request to the Google Trends API and filtered the Our World in Data Coronavirus Source data respectively. In order to eventually display the data nicely as a time series plot, I had to merge each pair of datasets on time. Because some times were in one but not the other, I decided to use an inner join and only keep the times that were both.</p>
+        <br>
+        <ul>
+          <li class = individual_li>For the Google Search API, the index was automatically defined and couldn’t be joined on.
+            <ul>
+              <li>I used the reset_index() method to get rid of the index. That made it possible to merge this data with the coronavirus data.</li>
+            </ul>
+          </li>
+          <li class = individual_li>When merging by location, some locations were present in both data sources but spelled differently.
+            <ul>
+              <li>I first used a for loop to make two lists of locations missing from each respective data source. Then I manually went through the lists to pull out the locations that were in both lists just spelled differently. Lastly, I went through one data source and renamed its locations to be spelled the same way as the other data source.</li>
+            </ul>
+          </li>
+          <li class = individual_li>When merging by date, the time stamps were in different formats
+            <ul>
+              <li>I used the to_datetime() method to change both data sources’ date columns to datetimes so that they would be formatted the same way.</li>
+            </ul>
+          </li>
+          <li class = individual_li>Some times were in one dataset but not in the other
+            <ul>
+              <li>I used an inner join, which only kept the entries in both datasets.</li>
+            </ul>
+          </li>
+          <li class = individual_li>When trying to plot all the different countries’ distributions on one graph, I got a ValueError: x and y must have same first dimension, but have shapes(90,) and (89)
+            <ul>
+              <li>I found out this was because China’s search data had one more row than both the US and Italy which I assumed was because in regards to timezone, China is always a day ahead. I decided the easiest way to fix this was to get rid of that extra entry to make sure the dataframes were of equal dimension. </li>
+            </ul>
+          </li>
+      </div>
+      <div class="analysis text-block">
+        <a name="analysis"></a>
+        <h3 class = "magenta">Analysis and Visualization</h3>
+        <br>
+        <div class = "covidsearchesmap">
+          <img src="images/covidsearchesmap.png" alt="decorative" style ="width:100%"/>
+        </div>
+        <br>
+        <p class = individual_p>For this graph, the bar on the right gauges search volume index, which isn’t directly proportional to how many searches but is instead search interest relative to the country with the most searches. Thus, although it seems as though many countries do not search about “coronavirus” at all, scores of 0 either mean there was not sufficient amount of data or that relative to other countries, they searched the term significantly less. As seen in the graph below, the leading countries searching for “coronavirus” are Italy and Spain while countries like the United States and Australia trailed behind. Other countries like China and Korea stayed around 0 which at first, made me a bit confused. However with more in depth research, I noticed that it may be due to the multilingual nature of our world. “Coronavirus” is an English word so other countries may be searching it with a different name which could be making the map more reflective of English-language web users.</p>
+        <br>
+        <div class = "covidcasesmap">
+          <img src="images/covidcasesmap.png" alt="decorative" style ="width:100%"/>
+        </div>
+        <br>
+        <p class = individual_p>Similarly, I created this choropleth graph for the total coronavirus cases in each country by 4/22/2020. Unlike the previous graph, the bar on the right is not relative so it is strictly the number of coronavirus cases the country has had up until the 22nd of April. This one was a lot more intuitive for me to understand and with one glimpse, you can easily tell that the United States has way more cases than anywhere else in the word. After the US, the next country is Spain but drops to almost to half the number of cases.</p>
+        <br>
+        <p class = individual_p>For the graph with the two datasets combined, I wanted to display the distribution of searches alongside the distribution of total cases over a fixed period of time. Initially, I had each country as a separate graph, but I realized if I really wanted to draw meaningful insights, it would be better to put them all on one graph. Looking at the final graph on the next page, you can easily compare the distributions between countries. Korea’s total cases never really exploded, growing a little but staying quite constant otherwise. China’s cases on the other hand increased quite steeply, but quickly leveled to follow a logarithmic distribution. Italy’s cases initially grew exponentially but slowed down and became more linear. Lastly, the United States’s cases blew up exponentially and are still growing very fast.</p>
+        <br>
+        <p class = individual_p>Comparing these to their respective search distributions, Korea has maintained constant spikes of interest and has recently been fluctuating at about 55% of its peak interest in early April. In comparison to other countries, Korea is definitely the best at still keeping themselves informed. In China’s case, since their first case happened before every other country, you can see how their searches peaked way earlier back in mid-January. From mid-January to mid-February the searches fell but have been slowly increasing now fluctuating settling at around 25% of its peak interest. Italy’s interest peaked in mid to late February, dropping and then increasing again before the cases started growing in mid-March. Since then, the interest has been constantly falling. Lastly, the US had minimal interest in the virus initially, but interest grew exponentially late February to mid-March before many cases were present. Interest decreased right as total cases started increasing exponentially.</p>
+        <br>
+        <div class = "distributioncomparison">
+          <img src="images/distributioncomparison.png" alt="decorative" style ="width:100%"/>
+        </div>
+
+
+      </div>
+
+      <div class="conclusion text-block">
+        <a name="conclusion"></a>
+        <h3 class = "magenta">Conclusion</h3>
+        <br>
+        <p class = individual_p>From this analysis, I feel it is safe to say there is a correlation between constant interest and coronavirus cases. Although every country has spikes in their interest, the countries that have been able to keep their cases under control are ones that haven’t lost interest in the virus since their first case. As a new and very deadly virus, there will always be things that need to be learned about the disease and the best way to stay alert, informed and safe is constantly educating yourself and sustaining interest.</p>
+
+      </div>
+  </body>
+</html>

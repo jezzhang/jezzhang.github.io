@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Dekko&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Jessica Zhang</title>
 
@@ -34,30 +35,32 @@
         </ul>
       </nav>
     </div>
-      <header id="proj_page_header_um">
-      <h1 id = "proj_page_h1">University of Michigan Randall Lab</h1>
-      <h2 id="proj_page_h2">Learning Analytics Research</h2>
-      </header>
-      <div class="overview text-block">
-        <h3>I. Introduction</h3>
+      <div class="proj_page_header_research">
+        <div class= "white_box">
+          <h1 class = "green" id = "proj_page_h1">University of Michigan Randall Lab</h1>
+          <h2 id="proj_page_h2">Quantitative Comparison Between Physics 160 and 140 Students</h2>
+        </div>
+      </div>
+      <div class="introduction text-block">
+        <h3 class = "green">Introduction</h3>
         <br>
-        <p>During my first two years of college I worked at a research lab dedicated to learning analytics. I utilized programming tools like Python and R to analyze student data, recognizing trends and disparities that occurred and pinpointing what factors influenced these patterns.</p>
+        <p class = individual_p>During my first two years of college, I worked at a research lab dedicated to learning analytics. I utilized programming tools like Python and R to analyze student data, recognizing trends and disparities that occurred and pinpointing what factors influenced these patterns.</p>
       </div>
       <div class="problem text-block">
         <a name="problem"></a>
-        <h3>II. Problem Statement</h3>
+        <h3 class = "green">Problem Statement</h3>
         <br>
-        <p>Every year, tons of students from a variety of different backgrounds enroll in universities to attain a higher education. In order to accommodate for these differing people, universities have implemented both honors classes as well as honor programs that students can take or be a part of to demonstrate their academic competency while challenging themselves. </p>
+        <p class = individual_p>Every year, tons of students from a variety of different backgrounds enroll in universities to attain a higher education. In order to accommodate for these differing people, universities have implemented both honors classes as well as honor programs that students can take or be a part of to demonstrate their academic competency while challenging themselves. </p>
         <br>
-        <p>At the University of Michigan, students are given the opportunity to gauge their own learning and either join the honors program, which encourages students to consistently take honors classes, or take the honors version of large, introductory courses. </p>
+        <p class = individual_p>At the University of Michigan, students are given the opportunity to gauge their own learning and either join the honors program, which encourages students to consistently take honors classes, or take the honors version of large, introductory courses. </p>
       </div>
       <div class="methodology text-block">
-        <h3>III. Methodology</h3>
+        <h3 class = "green">Methodology</h3>
         <br>
-        <p>My aim was to determine whether there is a difference in student performance between student who took Physics 160 (Honors version of Physics 140) versus students who took Physics 140. To elaborate, here are the key differences between the two classes: </p>
+        <p class = individual_p>My aim was to determine whether there was a difference in student performance between students who took Physics 140 versus students who took Physics 160 (Honors version of Physics 140). To elaborate, here are the key differences between the two classes: </p>
         <br>
         <ul>
-          <li>Physics 140
+          <li class = individual_li>Physics 140
             <ul>
               <li>More breadth</li>
               <li>Greater emphasis on specific details</li>
@@ -66,7 +69,7 @@
               <li>Greater variety of students</li>
             </ul>
           </li>
-          <li>Physics 160
+          <li class = individual_li>Physics 160
             <ul>
               <li>More flexible</li>
               <li>Assumes students' know a lot of the basic concepts</li>
@@ -76,38 +79,119 @@
           </li>
         </ul>
         <br>
-        <p> In order to learn more about each group of students, I utilized the Learning Analytics Data Architecture (LARC) and first filtered it to obtain all students who took either course. I then created two tables and seperated all the students based on which physics course they took. To get a general idea of the academic standing of each group of students prior to entering university, I performed multiple series of analysis (average, etc) on varying statistics, like ACT, SAT and AP scores. </p>
+        <p class = individual_p> In order to learn more about each group of students, I utilized the Learning Analytics Data Architecture (LARC) and first filtered it to obtain all students who took either course. I then created two tables and seperated all the students based on which physics course they took. To get a general idea of the academic standing of each group of students prior to entering university, I performed multiple series of analysis (average, etc) on varying statistics, like ACT, SAT and AP scores. </p>
         <br>
-        <p>To proceed, I then looked into how well each group of students performed in classes that most students from both groups took some time in their university career. I ordered the popularity/relativity of these courses by making a table of courses taken most often by Physics 140 students and another table of courses taken most often by Physics 160 students, and picked out the courses that appeared relatively high up in both tables.</p>
+        <p class = individual_p>To proceed, I then looked into how well each group of students performed in classes that most students from both groups took some time in their university career. I ordered the popularity/relativity of these courses by making a table of courses taken most often by Physics 140 students and another table of courses taken most often by Physics 160 students, and picked out the courses that appeared relatively high up in both tables. Within these shared classes, I specifically chose to analyze physics student performance in Multivariable and Vector Calculus (Math 215) and Introduction to Differential Equations (Math 216).</p>
         <br>
-        <p>Within these shared classes, I specifically chose to analyze physics student performance in Multivariable and Vector Calculus (Math 215) and Introduction to Differential Equations (Math 216). With these classes, I proceeded with further analysis by graphing a Math 215 grade distribution of all students who took Physics 140 and another Math 215 grade distribution of all students who took Physics 160. I did the same with Math 216. These graphs showed how the two differing groups performed holistically as a group, but the information was still very broad and no significant conclusions could be made.</p>
-        <br>
-        <p>In order to thoroughly compare the two groups of people, I further categorized each group of people based on the grade they received in each respective class into groups of those who got As, Bs, Cs, Ds, or Fs. I then paired the group of students who got a specific grade in Physics 140 with the group of students who got that same specific grade in Physics 160 and created a comparative grade distribution of what grades they received in a the shared classes. </p>
-      </div>
-      <div class="analysis text-block">
-        <a name="analysis"></a>
-        <h3>IV. Data Analysis</h3>
-        <br>
-        <p>Overall, analyzing the data left me with many different discoveries. Looking at each groups' statistics before they entered college, they were very obviously different, making it clear that the background of the students varied quite a bit. One clear example was ACT scores. Both groups of students produced very obviously left skewed graphs which I attributed to the fact that the University of Michigan as a whole is already a fraction of higher achieving individuals. But between the two groups, the graph of Physics 140 students was definitely more bell-shaped with an average of 30.05 while the graph of Physics 160 students was more left skewed with an average of 32.18.</p>
-        <br>
-        <div class = "analysis-images">
-          <div class = "act140">
-            <img src="images/140_act.png" alt="decorative"/>
+        <div class = "methodology-images">
+          <div class = "ordered_classes">
+            <p class = individual_p>Top Physics 140 Classes</p>
+            <br>
+            <img src="images/common_140.png" alt="decorative" style ="width:50%"/>
           </div>
-          <div class = "act160">
-            <!-- <img src="images/160_act.png" alt="decorative"/> -->
+          <div class = "ordered_classes">
+            <p class = individual_p>Top Physics 160 Classes</p>
+            <br>
+            <img src="images/common_160.png" alt="decorative" style ="width:50%"/>
           </div>
         </div>
       </div>
+      <div class="analysis text-block">
+        <a name="analysis"></a>
+        <h3 class = "green">Data Analysis</h3>
+        <br>
+        <p class = individual_p>Overall, analyzing the data left me with many different discoveries. Looking at each groups' statistics before they entered college, they were very obviously different, making it clear that the background of the students varied quite a bit. One clear example was ACT scores. Both groups of students produced very obviously left skewed graphs which I attributed to the fact that the University of Michigan as a whole is already a fraction of higher achieving individuals. But between the two groups, the graph of Physics 140 students was definitely more bell-shaped with an average of 30.05 while the graph of Physics 160 students was more left skewed with an average of 32.18.</p>
+        <br>
+        <div class = "analysis-images">
+          <div class = "act">
+            <p class = individual_p>Physics 140 ACT Score Distribution</p>
+            <br>
+            <img src="images/140_act.png" alt="decorative" style ="width:90%"/>
+          </div>
+          <div class = "act">
+            <p class = individual_p>Physics 160 ACT Score Distribution</p>
+            <br>
+            <img src="images/160_act.png" alt="decorative" style ="width:90%"/>
+          </div>
+        </div>
+
+        <br>
+        <p class = individual_p> Looking at the various Physics AP test scores, I was met with similiar findings. </p>
+
+        <table class="ap-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Physics One Advanced Placement Test</th>
+              <th>Physics Two Advanced Placement Test</th>
+              <th>Physics B Advanced Placement Test</th>
+              <th>Physics C Electricity and Magnetism Advanced Placement Test</th>
+              <th>Physics C Mechanics Advanced Placement Test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Physics 140 </td>
+              <td>3.40</td>
+              <td>3.57</td>
+              <td>3.79</td>
+              <td>3.20</td>
+              <td>3.50</td>
+            </tr>
+            <tr>
+              <td>Physics 160 </td>
+              <td>4.14</td>
+              <td>4.14</td>
+              <td>4.49</td>
+              <td>4.29</td>
+              <td>4.47</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <br>
+
+        <p class = individual_p> Next, I looked at the mean grade for each class and conducted a two sample t-test to compare the two. The mean grade for Physics 140 was approximately a C (1.99) while the mean grade of Physics 160 was approximately a B+ (3.31). The t-test results show that the difference in means for the two classes is statistically significant at conventional levels of confidence. </p>
+        <br>
+        <div class = "analysis-images">
+          <div class = "test">
+            <img src="images/twosample_ttest.png" alt="decorative" style ="width:90%"/>
+          </div>
+          <div class = "test">
+            <img src="images/mean_grades.png" alt="decorative" style ="width:90%"/>
+          </div>
+        </div>
+        <br>
+        <p class = individual_p> However, I found the mean Physics 140 grade to be unusually low. Even with taking account the much larger population size, it still seemed a bit suspicious. So I decided to graph the the grade distribution of each class. As seen below, there is a very high spike at 0. Upon further inspection, I found that for many students, the number inputed for 'GRD_PNTS_PER_UNIT' was incorrect even though the official grade was right. For some reason, the grade the teacher inputed wasn't necessarily the same as the official grade put in the transcript. The other zeros were correct, being students who dropped the course or actually failed the class.</p>
+        <br>
+        <div class = "analysis-images">
+          <div class = "test">
+            <p class = individual_p>Physics 140 Grade Distribution</p>
+            <br>
+            <img src="images/140_gradedistribution.png" alt="decorative" style ="width:100%"/>
+          </div>
+          <div class = "test">
+            <p class = individual_p>Physics 160 Grade Distribution</p>
+            <br>
+            <img src="images/160_gradedistribution.png" alt="decorative" style ="width:100%"/>
+          </div>
+        </div>
+        <br>
+        <p class = individual_p> Though this was quite an important discovery, it was hard to correct for it because I was unable to get more detailed information regarding why the grades were misinputed. Since a lot of my analysis was quantitative, I was unable to use the letter grade column of the data. I decided to just note this down and keep it in mind in the rest of my analysis. </p>
+        <br>
+        <p class = individual_p> Next, I looked into how the performance of Physics 140 students compared to the performance of Physics 160 students in other classes. I proceeded with further analysis by graphing a Math 215 grade distribution of all students who took Physics 140 and another Math 215 grade distribution of all students who took Physics 160. I did the same with Math 216. These graphs showed how the two differing groups performed holistically as a group, but the information was still very broad and no significant conclusions could be made.</p>
+        <img src="images/math215_distributions.png" alt="decorative" style ="width:100%"/>
+        <br>
+        <p class = individual_p>In order to thoroughly compare the two groups of people, I decided to further categorize each group of people based on the grade they received in each respective class into groups of those who got As, Bs, Cs, Ds, or Fs. I then paired the group of students who got a specific grade in Physics 140 with the group of students who got that same specific grade in Physics 160 and created a comparative grade distribution of what grades they received in a the shared classes. This would clearly show if there was a difference in student performance between students who took Physics 160 versus students who took Physics 140. </p>
+        <br>
+        <img src="images/215_individual_distributions.png" alt="decorative" style ="width:100%"/>
+      </div>
       <div class="wireframe text-block">
         <a name="wireframe"></a>
-        <h3>V. Conclusion</h3>
+        <!-- <h3 class = "green">Conclusion</h3>
         <br>
-        <p>We decided on a simple search engine. It takes in user input, either free form or data specific, and returns 5-10 results that are most similar to the input. The user can then manually choose a result and get more detailed information on his or her search.</p>
-        <br>
-        <!-- <div class = "wireframe-image">
-          <img src="images/wireframe.png" alt="decorative"/>
-        </div> -->
+        <p class = individual_p></p> -->
       </div>
   </body>
 </html>
