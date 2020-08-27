@@ -37,53 +37,128 @@
     </div>
       <div class="proj_page_header_optimization">
         <div class="white_box">
-          <h1 class = "pink" id = "proj_page_h1">Mercedes-Benz Internship</h1>
-          <h2 id="proj_page_h2">Data optimization and consolidation</h2>
+          <h1 class = "pink" id = "proj_page_h1">Bank of the West Internship</h1>
+          <h2 id="proj_page_h2">Statistical Analysis and Visualizations</h2>
         </div>
       </div>
       <div class="overview text-block">
         <h3 class = "pink">Introduction</h3>
         <br>
-        <p class = individual_p>Over the years, MBFS has accumulated tons of cubes, reports, and dashboards within its Management Reporting environment.(ADD MORE)</p>
+        <p class = individual_p>As a financial institution dedicated to customer success, Bank of the West's call center receives many calls every month on a wide variety of reasons from customers with diverse demographics.
+          In order to ensure excellent support but also sustain efficiency, BOTW is interested in monitoring and understanding the trends in the call center data based on caller engagement, demographics, digital activity, and money movement. </p>
+
       </div>
       <div class="goal text-block">
         <h3 class = "pink">Goals</h3>
         <br>
         <ul>
-          <li class = individual_li>Conduct impactful analysis to make insightful recommendation on overall consolidation and optimization of data</li>
-          <li class = individual_li>Write code that can be used to run monthly inspections on data</li>
+          <li class = individual_li>Write SQL queries to clean and mine data necessary for analysis</li>
+          <li class = individual_li>Build statistical models on call center data and design informational visualizations to identify key predictors</li>
         </ul>
       </div>
-      <div class="impactanalysis text-block">
-        <h3 class = "pink">Analysis</h3>
+      <div class="datacleaning text-block">
+        <h3 class = "pink">Data Cleaning</h3>
         <br>
-        <p class = individual_p>I wanted to get a quick, overview of the data in the environment so I first looked at what kind of reports were being used by employees the most. </p>
-
-        <p class = individual_p>I then dived deeper into the analysis and looked into multiple factors involved such as the elements and metrics, usage, run time, and source.</p>
-        <p class = individual_p>Specifically, I was interested in the execution time of reports based on whether they successfully ran or not. To do this, I divided the Report Usage
-        table based on the "Status" column which consisted of two values, Success and Failure, and conducted statistical analysis for each subgroup. Initially, the
-        statistics I was getting didn't seem quite accurate but with a bit of filtering, I found that a small portion of each subset of the execution times (7-8%)
-        exceeded 5 minutes and was heavily skewing my data. I decided it was best to eliminate those values.</p>
+        <p class = individual_p>I utilized TOAD to write SQL statements so I could join the base tables together and ultimately get one table of all the information I was interested in. </p>
         <br>
-        <div class = "status-images">
-          <div class = "success">
-            <img src="images/success.png" alt="decorative"/>
-          </div>
-          <div class = "failure">
-            <img src="images/failure.png" alt="decorative"/>
-          </div>
+        <div class = "sql-image">
+          <img src="images/sql.png" id = "proj_pg_image" alt="decorative"/>
         </div>
-        <p class = individual_p>Surface level analysis showed that both distributions were still heavily skewed right. For the failed report executions distribution, there were two obvious
-        spikes at two distinct places, one between 0-0.5 minutes and one between 1.5 and 2.5 minutes.
         <br>
-        <p class = individual_p> Upon further investigation, at the:</p>
-        <ul>
-          <li class = individual_li>Less than 0.5 minutes spike -  Only 9% of the failures were due to user cancellation</li>
-          <li class = individual_li>Between 1.5 and 2.5 minutes spike – 81% of the failures were due to user cancellation</li>
-        </ul>
-
-        <p class = individual_p>This means that most reports, if failed, fail quite early on while failures later on are usually the result of users manually cancelling the running of the report.</p>
-
+        <p class = individual_p>So here is just a basic workflow diagram of how I cleaned and manipulated the base tables to get my final target table. I first joined the external data load with the call center data so that I could get a table where each row represents one call with demographic data on the caller. Then I joined the digital cust usr table with the fact digital activity table to get a table with each customer and their digital activity of every month (when they enrolled in online banking, whether they were active in the last 30 days, etc). Lastly I gathered data regarding each customer and their money movement, basically creating a table documenting how many zelle payments, billpay payments, etc a customer made each month. To get the final target table, I joined the three staging tables together by rm_num and year_month. </p>
+        <br>
+        <div class = "workflow-image">
+          <img src="images/workflow.png" id = "proj_pg_image" alt="decorative"/>
+        </div>
+        <br>
       </div>
+
+      <div class="statisticalanalysis text-block">
+        <h3 class = "pink">Statistical Analysis</h3>
+        <br>
+        <br>
+        <h4>Statistical question: What factors influence customer calls about money movement? </h4>
+        <br>
+        <p class = individual_p> Money movement refers to the system of cashless modes of payment. I specifically looked at Billpay, which is an older system that is mainly used to pay bills to a company, and Zelle, which is newer and used to send and receive money from individuals. I think going into any analysis, you tend to have many presumptions about what the data will look like. For example: who would you expect to call more, older customers or younger customers? And, as an individual makes more transactions, do you think they would call more times or less? </p>
+        <br>
+        <p class = individual_p> For statistical analysis and visualizations, I decided to utilize RStudio because it has a lot of the basic statistical tests built into the application already. </p>
+        <br>
+        <div class = "rstudio-image">
+          <img src="images/rstudio.png" id = "proj_pg_image" alt="decorative"/>
+        </div>
+        <br>
+        <p class = individual_p> So first, I wanted to establish a baseline I could use to compare my findings to. I decided to look at the population of users of each system since a big proportion of money movement callers would be a subset of money movement users. </p>
+        <br>
+        <div class = "agedifference-image">
+          <img src="images/agedifference.png" id = "proj_pg_image" alt="decorative"/>
+        </div>
+        <br>
+        <p class = individual_p> On the left, we have the age distribution of Billpay users and Billpay callers. The user distribution is slightly left skewed while the caller distribution becomes more skewed causing the median to increase from 53 years old to 61 years old. This implies that Billpay callers are significantly older than the average Billpay user. </p>
+        <br>
+        <p class = individual_p> On the right we have the age distribution of Zelle users and Zelle callers. The user distribution is much more normally distributed while the caller distribution starts to skew to the right causing the median to decrease from 42 years old to 40 years old. Although the difference is not that big, the fact that callers were younger than users was very interesting. </p>
+        <br>
+        <p class = individual_p> To further explore why younger customers were calling about Zelle, I subset the caller data into 3 groups: callers that made no zelle transactions, callers that made 1-3 zelle transactions and callers that made more than 4 zelle transactions. </p>
+        <br>
+        <div class = "zellecallerage-image">
+          <img src="images/zellecallerage.png" id = "proj_pg_image" alt="decorative"/>
+        </div>
+        <p class = individual_p> With this split you can see the distribution starts off quite normally distributed but as callers make more transactions, the graph starts to skew to the right, resembling more and more like the overall age distribution of zelle callers. </p>
+        <br>
+        <p class = individual_p> The median age shifts from 42 years old to 39 years old to 39 years old and the number of outliers increases. </p>
+        <br>
+        <p class = individual_p> This shows that the number of zelle transactions plays a significant role in the skewing of the age distribution. </p>
+        <br>
+        <p class = individual_p> With this new information, I wanted to understand the relationship between the number of zelle transactions and the number of calls a customer would make about zelle. This would give us more insight on call quantity instead of just a mere indicator of whether they called or not. </p>
+        <div class = "zellecallcount-image">
+          <img src="images/zellecallcount.png" id = "proj_pg_image" alt="decorative"/>
+        </div>
+        <p class = individual_p> From the graphs you can see that for those who made no zelle transactions, a high proportion of them only call once, but as the customer makes more and more transactions, the distribution fans out towards higher call counts. </p>
+        <br>
+        <p class = individual_p> The median total call count shifts from 1 call, to 1 call to 2 calls. </p>
+        <br>
+        <p class = individual_p> Although the shift isn’t super big, we can still see that as customers make more zelle transactions, the number of times they call increases. </p>
+      </div>
+
+      <div class="keyinsights text-block">
+        <h3 class = "pink">Key Insights</h3>
+        <br>
+        <ul>
+          <li class = individual_li>Zelle callers are significantly younger than Billpay callers
+            <ul>
+              <li>Younger customers aren’t as established so they don’t really need to use Billpay as much as older customers</li>
+              <li>Zelle doesn’t allow customers to pay businesses</li>
+            </ul>
+          </li>
+          <li class = individual_li>Zelle callers tend to be younger when compared to the overall Zelle user population
+            <ul>
+              <li>This can be partially attributed to number of transactions: Age decreases as the number of Zelle transactions increase</li>
+            <ul>
+          </li>
+          <li class = individual_li>Zelle callers are calling more when they make more transactions
+            <ul>
+              <li>It isn’t very drastic but the median increases a little </li>
+            <ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="learned text-block">
+        <div class= "learned-text">
+          <h3 class = "pink">What I Learned</h3>
+          <br>
+          <p class = individual_p>Through this project, I learned that in order to fully understand user-focused data, you have to look at all aspects of the cognitive triangle: thoughts, feelings and behavior. In my project, I’ve uncovered behavioral insights on the data and can describe behaviors users are portraying but I don’t know why or what drives this behavior.</p>
+          <br>
+        </div>
+        <div class = "learned-image">
+          <img src="images/cognitivetriangle.png" id = "proj_pg_image" alt="decorative"/>
+        </div>
+      </div>
+      <div class = "text-block">
+        <h3 class = "pink">Next Steps</h3>
+        <br>
+        <p class = individual_p>Why are people calling more when they make more transactions? And why are they younger? Some next steps could be to look at survey callers and directly ask to understand their thoughts. We could also try looking into click data to see if there is a place on the webpage where people are getting stuck. We could also change up the design of the interface and try some A/B testing to see if the number of calls fluctuates.</p>
+      </div>
+
+
   </body>
 </html>

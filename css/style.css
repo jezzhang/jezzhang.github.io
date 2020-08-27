@@ -791,7 +791,7 @@ h5 {
 
 
 
-.wireframe-image,.backend-image, .ideation-image{
+.wireframe-image,.backend-image, .ideation-image, .workflow-image, .rstudio-image, .sql-image, .agedifference-image, .zellecallerage-image, .zellecallcount-image, .learned-image{
   display: block;
   width: 100%;
 
@@ -977,8 +977,8 @@ iframe {
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid black;
-    width: 41ch;
-    animation: type 3s steps(41), blink .5s step-end 3s infinite alternate;
+    width: 44ch;
+    animation: type 3s steps(44), blink .5s step-end 3s infinite alternate;
   }
 
 
@@ -1259,18 +1259,18 @@ iframe {
     grid-row: 2 / span 1;
   }
 
-  .ideation {
+  .ideation, .learned {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 
   }
 
-  .ideation-text {
+  .ideation-text, .learned-text {
     grid-column: 1 / span 1;
   }
 
-  .ideation-image {
+  .ideation-image, .learned-image {
     grid-column: 2 / span 1;
   }
 
