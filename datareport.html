@@ -114,31 +114,30 @@
             </ul>
           </li>
       </div>
-      <div class="analysis text-block">
-        <a name="analysis"></a>
-        <h3 class = "magenta">Analysis and Visualization</h3>
+      <div class="visualization text-block">
+        <a name="visualization"></a>
+        <h3 class = "magenta">Visualizations</h3>
+        <br>
+        <p class = individual_p> All the previous data pre-processing was done in jupyter notebook with python however in order to produce quality visualizations, I saved my datasets as csv files and read them into Tableau. Below is the dashboard I created.</p>
         <br>
         <div class = "covidsearchesmap">
-          <img src="images/covidsearchesmap.png" alt="decorative" style ="width:100%"/>
+          <img src="images/covid_dashboard.png" alt="decorative" style ="width:100%"/>
         </div>
         <br>
-        <p class = individual_p>For this graph, the bar on the right gauges search volume index, which isn’t directly proportional to how many searches but is instead search interest relative to the country with the most searches. Thus, although it seems as though many countries do not search about “coronavirus” at all, scores of 0 either mean there was not sufficient amount of data or that relative to other countries, they searched the term significantly less. As seen in the graph below, the leading countries searching for “coronavirus” are Italy and Spain while countries like the United States and Australia trailed behind. Other countries like China and Korea stayed around 0 which at first, made me a bit confused. However with more in depth research, I noticed that it may be due to the multilingual nature of our world. “Coronavirus” is an English word so other countries may be searching it with a different name which could be making the map more reflective of English-language web users.</p>
-        <br>
-        <div class = "covidcasesmap">
-          <img src="images/covidcasesmap.png" alt="decorative" style ="width:100%"/>
-        </div>
-        <br>
-        <p class = individual_p>Similarly, I created this choropleth graph for the total coronavirus cases in each country by 4/22/2020. Unlike the previous graph, the bar on the right is not relative so it is strictly the number of coronavirus cases the country has had up until the 22nd of April. This one was a lot more intuitive for me to understand and with one glimpse, you can easily tell that the United States has way more cases than anywhere else in the word. After the US, the next country is Spain but drops to almost to half the number of cases.</p>
-        <br>
-        <p class = individual_p>For the graph with the two datasets combined, I wanted to display the distribution of searches alongside the distribution of total cases over a fixed period of time. Initially, I had each country as a separate graph, but I realized if I really wanted to draw meaningful insights, it would be better to put them all on one graph. Looking at the final graph on the next page, you can easily compare the distributions between countries. Korea’s total cases never really exploded, growing a little but staying quite constant otherwise. China’s cases on the other hand increased quite steeply, but quickly leveled to follow a logarithmic distribution. Italy’s cases initially grew exponentially but slowed down and became more linear. Lastly, the United States’s cases blew up exponentially and are still growing very fast.</p>
-        <br>
-        <p class = individual_p>Comparing these to their respective search distributions, Korea has maintained constant spikes of interest and has recently been fluctuating at about 55% of its peak interest in early April. In comparison to other countries, Korea is definitely the best at still keeping themselves informed. In China’s case, since their first case happened before every other country, you can see how their searches peaked way earlier back in mid-January. From mid-January to mid-February the searches fell but have been slowly increasing now fluctuating settling at around 25% of its peak interest. Italy’s interest peaked in mid to late February, dropping and then increasing again before the cases started growing in mid-March. Since then, the interest has been constantly falling. Lastly, the US had minimal interest in the virus initially, but interest grew exponentially late February to mid-March before many cases were present. Interest decreased right as total cases started increasing exponentially.</p>
-        <br>
-        <div class = "distributioncomparison">
-          <img src="images/distributioncomparison.png" alt="decorative" style ="width:100%"/>
-        </div>
 
-
+      </div>
+      <div class="analysis text-block">
+        <a name="analysis"></a>
+        <h3 class = "magenta">Analysis</h3>
+        <br>
+        <p class = individual_p>For the map graph on the bottom left, the bar gauges search volume index, which isn’t directly proportional to how many searches but is instead search interest relative to the country with the most searches. Thus, although it seems as though many countries do not search about “coronavirus” at all, scores of 0 either mean there was not sufficient amount of data or that relative to other countries, they searched the term significantly less. As seen in the graph, the leading countries searching for “coronavirus” are Italy and Spain while countries like the United States and Australia trailed behind. Other countries like China and Korea stayed around 0 which at first, made me a bit confused. However with more in depth research, I noticed that it may be due to the multilingual nature of our world. “Coronavirus” is an English word so other countries may be searching it with a different name which could be making the map more reflective of English-language web users.</p>
+        <br>
+        <br>
+        <p class = individual_p>Similarly, I created this choropleth graph for the total coronavirus cases per million in each country by 2/19/2021. Unlike the previous graph, the bar on the bottom right is not relative so it is strictly the number of coronavirus cases the country has had up until the 19th of February. This one was a lot more intuitive for me to understand and with one glimpse, you can easily tell that the United States has way more cases than anywhere else in the word. After the US, the next country is Spain but drops to almost to half the number of cases.</p>
+        <br>
+        <p class = individual_p>For the graph with the two datasets combined, I wanted to display the distribution of searches alongside the distribution of total cases over a fixed period of time. Initially, I had each country as a separate graph, but I realized if I really wanted to draw meaningful insights, it would be better to put them all on one graph. Looking at the final graph on the very top of the dashboard, you can easily compare the distributions between countries. Korea’s total cases never really exploded, growing a little but staying quite constant otherwise. China’s cases on the other hand increased quite steeply, but quickly leveled to follow a logarithmic distribution. Italy’s cases initially grew exponentially but slowed down and became more linear. Lastly, the United States’s cases blew up exponentially and are still growing very fast.</p>
+        <br>
+        <p class = individual_p>Comparing these to their respective search distributions, China has maintained constant spikes of interest and in comparison to other countries, China is definitely the best at still keeping themselves informed. The other three countries USA, Italy and Korea show a very obvious drop in searches with USA dropping the most relative to searches in November. Although not present in this graph, I previously made some insights from data from early 2020. In China’s case, since their first case happened before every other country, their searches peaked way earlier back in mid-January. From mid-January to mid-February the searches fell but have been slowly increasing again. Italy’s interest peaked in mid to late February, dropping and then increasing again before the cases started growing in mid-March. Since then, the interest has been constantly falling. Lastly, the US had minimal interest in the virus initially, but interest grew exponentially late February to mid-March before many cases were present. Interest decreased right as total cases started increasing exponentially.</p>
       </div>
 
       <div class="conclusion text-block">
